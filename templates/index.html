@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order System</title>
+<script src="https://unpkg.com/angular@1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="orderApp">
+<div ng-controller="orderCtrl">
+<h1>Order System</h1>
+<form ng-submit="createOrder()">
+<label for="name">Name:</label>
+<input type="text" ng-model="order.name">
+<br>
+<label for="description">Description:</label>
+<input type="text" ng-model="order.description">
+<br>
+<input type="submit" value="Create">
+</form>
+<br>
+<ul>
+<li ng-repeat="order in orders">{{order.name}} - {{order.description}} <button ng-click="deleteOrder(order.id)">Delete</button></li>
+</ul>
+</div>
+</body>
+</html>
+
